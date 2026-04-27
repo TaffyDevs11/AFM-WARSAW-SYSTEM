@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found — AFM Warsaw Assembly</title>
+  <link rel="stylesheet" href="css/main.css">
+  <style>
+    body { min-height: 100vh; display: flex; flex-direction: column; }
+    .error-main {
+      flex: 1;
+      background: var(--navy-deep);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8rem 2rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .error-main::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 50% 60% at 30% 40%, rgba(201,162,39,.06) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 50% at 80% 70%, rgba(204,27,27,.05) 0%, transparent 60%);
+    }
+    .error-content { position: relative; text-align: center; max-width: 580px; }
+    .error-number {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(6rem, 18vw, 12rem);
+      font-weight: 900;
+      color: transparent;
+      -webkit-text-stroke: 2px rgba(201,162,39,.35);
+      line-height: 1;
+      margin-bottom: 0;
+      display: block;
+      position: relative;
+    }
+    .error-cross {
+      font-size: 3rem;
+      color: var(--gold);
+      display: block;
+      margin: -1rem 0 1.5rem;
+      text-shadow: 0 0 30px rgba(201,162,39,.4);
+      animation: float 3s ease-in-out infinite;
+    }
+    @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+    .error-title {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(1.4rem, 4vw, 2rem);
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 1rem;
+    }
+    .error-text {
+      font-family: 'Crimson Pro', serif;
+      font-size: 1.1rem;
+      color: rgba(255,255,255,.6);
+      line-height: 1.7;
+      margin-bottom: 0.75rem;
+      font-style: italic;
+    }
+    .error-verse {
+      border-left: 3px solid var(--gold);
+      padding: 0.8rem 1.2rem;
+      margin: 1.5rem auto;
+      max-width: 400px;
+      text-align: left;
+      color: rgba(255,255,255,.45);
+      font-family: 'Crimson Pro', serif;
+      font-size: 0.95rem;
+      font-style: italic;
+    }
+    .error-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem; }
+    .error-links {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,.08);
+    }
+    .error-link {
+      color: rgba(255,255,255,.45);
+      font-size: 0.82rem;
+      transition: color .2s;
+    }
+    .error-link:hover { color: var(--gold); }
+  </style>
+  <meta name="theme-color" content="#1a2456">
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <link rel="apple-touch-icon" href="images/logo.png">
+  <meta property="og:type"        content="website">
+  <meta property="og:site_name"   content="AFM Warsaw Assembly">
+  <meta property="og:image"       content="images/logo.png">
+  <meta name="twitter:card"       content="summary">
+  <meta name="twitter:site"       content="@afmwarsaw">
+</head>
+<body>
+<div id="page-loader">
+  <div class="loader-emblem">
+    <div class="loader-ring"></div><div class="loader-ring"></div>
+    <img src="images/logo.png" alt="AFM Warsaw" class="loader-logo-img">
+  </div>
+  <div class="loader-text">AFM Warsaw</div>
+  <div class="loader-tagline">Warsaw Christian Centre</div>
+  <div class="loader-bars"><div class="loader-bar"></div><div class="loader-bar"></div><div class="loader-bar"></div><div class="loader-bar"></div><div class="loader-bar"></div></div>
+</div>
+
+<header id="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo-wrap">
+      <img src="images/logo.png" alt="AFM Warsaw Logo" class="logo-img">
+      <div class="logo-text-block">
+        <div class="logo-name">AFM Warsaw</div>
+        <div class="logo-sub">Warsaw Christian Centre</div>
+      </div>
+    </a>
+    <nav class="main-nav">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="ministries.html" class="nav-link">Ministries</a>
+      <a href="gallery.html" class="nav-link">Gallery</a>
+      <a href="blog.html" class="nav-link">Blog &amp; Sermons</a>
+      <a href="online.html" class="nav-link">Online</a>
+      <a href="announcements.html" class="nav-link">News</a>
+      <a href="contact.html" class="nav-link nav-cta">Contact</a>
+    </nav>
+    <button class="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </div>
+  <nav class="mobile-nav">
+    <a href="index.html" class="nav-link">Home</a><a href="about.html" class="nav-link">About</a>
+    <a href="ministries.html" class="nav-link">Ministries</a><a href="gallery.html" class="nav-link">Gallery</a>
+    <a href="blog.html" class="nav-link">Blog &amp; Sermons</a><a href="online.html" class="nav-link">Online</a>
+    <a href="announcements.html" class="nav-link">News</a><a href="contact.html" class="nav-link">Contact</a>
+  </nav>
+</header>
+
+<main class="error-main">
+  <div class="error-content">
+    <span class="error-number">404</span>
+    <span class="error-cross">✝</span>
+    <h1 class="error-title">Page Not Found</h1>
+    <p class="error-text">The page you're looking for has moved, been removed, or doesn't exist.</p>
+    <blockquote class="error-verse">
+      "For I am the Lord your God who takes hold of your right hand and says to you,
+      Do not fear; I will help you." — Isaiah 41:13
+    </blockquote>
+    <div class="error-actions">
+      <a href="index.html" class="btn btn-primary">← Back to Home</a>
+      <a href="contact.html" class="btn btn-secondary">Contact Us</a>
+    </div>
+    <div class="error-links">
+      <a href="about.html" class="error-link">About Us</a>
+      <a href="ministries.html" class="error-link">Ministries</a>
+      <a href="gallery.html" class="error-link">Gallery</a>
+      <a href="blog.html" class="error-link">Blog &amp; Sermons</a>
+      <a href="announcements.html" class="error-link">Announcements</a>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-bottom" style="padding:1.5rem 0;border-top:none;">
+      <span>© 2026 AFM Warsaw Assembly — Warsaw Christian Centre. All rights reserved.</span>
+      <span>Advancing the Gospel | Warsaw, Poland</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

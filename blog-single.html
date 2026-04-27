@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="page-title">Article — AFM Warsaw Assembly</title>
+  <meta name="description" content="Read inspiring articles from AFM Warsaw Assembly.">
+  <meta name="theme-color" content="#1a2456">
+  <link rel="icon" type="image/svg+xml" href="images/logowhite2.png">
+  <link rel="apple-touch-icon" href="images/logo.png">
+  <meta property="og:type"        content="website">
+  <meta property="og:site_name"   content="AFM Warsaw Assembly">
+  <meta property="og:image"       content="images/logo.png">
+  <meta name="twitter:card"       content="summary">
+  <meta name="twitter:site"       content="@afmwarsaw">
+  <link rel="stylesheet" href="css/main.css">
+  <style>
+    /* Article-specific styles */
+    .article-hero {
+      background: var(--navy-deep);
+      padding: 130px 0 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .article-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 80% at 70% 30%, rgba(201,162,39,0.08), transparent 60%),
+                  linear-gradient(to bottom, #0f1730, #1a2456 60%, transparent);
+    }
+    .article-featured-img {
+      width: 100%;
+      max-height: 480px;
+      object-fit: cover;
+      display: block;
+      position: relative;
+    }
+    .article-featured-placeholder {
+      height: 320px;
+      background: linear-gradient(135deg, #1a2456 0%, #212d6b 50%, #1a2456 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 6rem;
+      color: rgba(201,162,39,0.15);
+    }
+    .article-meta-bar {
+      background: var(--navy-card, #141c3a);
+      border-bottom: 2px solid var(--gold, #c9a227);
+      padding: 1.2rem 0;
+    }
+    .article-meta-bar .container {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .article-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(201,162,39,0.12);
+      border: 1px solid rgba(201,162,39,0.3);
+      color: var(--gold, #c9a227);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 0.35rem 0.9rem;
+      border-radius: 100px;
+    }
+    .article-date-meta {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.45);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .article-date-meta .dot { width: 3px; height: 3px; border-radius: 50%; background: rgba(255,255,255,0.25); }
+
+    /* Main article body */
+    .article-layout {
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 3rem;
+      align-items: start;
+      padding: 3rem 0 5rem;
+    }
+    .article-body {
+      background: var(--white);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(26,36,86,0.12);
+    }
+    .article-content {
+      padding: 2.5rem 3rem;
+    }
+    .article-title {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(1.5rem, 3.5vw, 2.4rem);
+      font-weight: 900;
+      color: var(--navy-deep, #0f1730);
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+    .article-author-strip {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 1.2rem 0;
+      border-top: 1px solid var(--gray-light, #e8e5de);
+      border-bottom: 1px solid var(--gray-light, #e8e5de);
+      margin-bottom: 2rem;
+    }
+    .author-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--gold, #c9a227);
+      flex-shrink: 0;
+    }
+    .author-avatar-placeholder {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #1a2456, #212d6b);
+      border: 2px solid var(--gold, #c9a227);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      color: rgba(201,162,39,0.6);
+      flex-shrink: 0;
+    }
+    .author-info .author-name {
+      font-weight: 700;
+      font-size: 0.88rem;
+      color: var(--navy-deep, #0f1730);
+    }
+    .author-info .author-label {
+      font-size: 0.72rem;
+      color: var(--gray, #9a9485);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    .article-text {
+      font-family: 'Crimson Pro', Georgia, serif;
+      font-size: 1.15rem;
+      line-height: 1.9;
+      color: #3a3a4a;
+    }
+    .article-text p { margin-bottom: 1.4rem; }
+    .article-text p:last-child { margin-bottom: 0; }
+    .article-text h2 { font-family: 'Cinzel', serif; font-size: 1.3rem; font-weight: 700; color: var(--navy-deep); margin: 2rem 0 1rem; }
+    .article-text h3 { font-family: 'Cinzel', serif; font-size: 1.1rem; font-weight: 700; color: var(--navy); margin: 1.5rem 0 0.75rem; }
+    .article-text blockquote {
+      border-left: 4px solid var(--gold, #c9a227);
+      padding: 1rem 1.5rem;
+      margin: 1.5rem 0;
+      background: rgba(201,162,39,0.05);
+      border-radius: 0 8px 8px 0;
+      font-style: italic;
+      color: var(--navy, #1a2456);
+    }
+    .article-text ul, .article-text ol { margin: 1rem 0 1.5rem 1.5rem; }
+    .article-text li { margin-bottom: 0.5rem; }
+    .article-text strong { color: var(--navy-deep); font-weight: 700; }
+
+    /* Share bar */
+    .article-share-bar {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1.5rem 3rem;
+      border-top: 1px solid var(--gray-light, #e8e5de);
+      background: var(--off-white, #f8f5ee);
+      flex-wrap: wrap;
+    }
+    .share-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--gray, #9a9485);
+    }
+    .share-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 0.45rem 1rem;
+      border-radius: 100px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      transition: all 0.25s;
+    }
+    .share-btn.facebook { background: #1877f2; color: #fff; }
+    .share-btn.whatsapp { background: #25d366; color: #fff; }
+    .share-btn.copy-link { background: var(--navy-deep); color: var(--gold); border: 1px solid rgba(201,162,39,0.3); }
+    .share-btn:hover { transform: translateY(-2px); opacity: 0.9; }
+
+    /* Sidebar */
+    .article-sidebar { display: flex; flex-direction: column; gap: 1.5rem; }
+    .sidebar-widget {
+      background: var(--white);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(26,36,86,0.08);
+    }
+    .widget-header {
+      background: var(--navy-deep);
+      padding: 1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .widget-title {
+      font-family: 'Cinzel', serif;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--gold, #c9a227);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+    .widget-body { padding: 1.2rem 1.5rem; }
+
+    /* Related articles */
+    .related-article {
+      display: grid;
+      grid-template-columns: 64px 1fr;
+      gap: 0.75rem;
+      align-items: center;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--gray-light, #e8e5de);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .related-article:last-child { border-bottom: none; padding-bottom: 0; }
+    .related-article:hover { transform: translateX(4px); }
+    .related-thumb {
+      width: 64px;
+      height: 48px;
+      border-radius: 6px;
+      object-fit: cover;
+      border: 1px solid rgba(201,162,39,0.2);
+    }
+    .related-thumb-placeholder {
+      width: 64px;
+      height: 48px;
+      border-radius: 6px;
+      background: linear-gradient(135deg, #1a2456, #212d6b);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      color: rgba(201,162,39,0.3);
+    }
+    .related-title { font-size: 0.82rem; font-weight: 600; color: var(--navy-deep); line-height: 1.3; }
+    .related-date  { font-size: 0.7rem; color: var(--gray); margin-top: 3px; }
+
+    /* Verse widget */
+    .verse-widget {
+      background: linear-gradient(135deg, var(--navy-deep), var(--navy-mid, #212d6b));
+      border-radius: 14px;
+      padding: 1.8rem;
+      text-align: center;
+      border: 1px solid rgba(201,162,39,0.2);
+    }
+    .verse-cross { font-size: 2rem; color: rgba(201,162,39,0.5); margin-bottom: 1rem; }
+    .verse-text {
+      font-family: 'Crimson Pro', serif;
+      font-size: 1.05rem;
+      font-style: italic;
+      color: rgba(255,255,255,0.8);
+      line-height: 1.7;
+      margin-bottom: 0.75rem;
+    }
+    .verse-ref { font-size: 0.75rem; font-weight: 700; color: var(--gold); letter-spacing: 0.1em; text-transform: uppercase; }
+
+    /* Back nav */
+    .article-back-nav {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255,255,255,0.6);
+      font-size: 0.82rem;
+      margin-bottom: 1.5rem;
+      transition: color 0.2s;
+    }
+    .article-back-nav:hover { color: var(--gold); }
+
+    /* Loading skeleton */
+    .skeleton {
+      background: linear-gradient(90deg, rgba(255,255,255,0.06) 25%, rgba(255,255,255,0.12) 50%, rgba(255,255,255,0.06) 75%);
+      background-size: 200% 100%;
+      animation: skeleton-shimmer 1.4s infinite;
+      border-radius: 6px;
+    }
+    @keyframes skeleton-shimmer { 0%{background-position:200% 0} 100%{background-position:-200% 0} }
+    .skeleton-title { height: 2.4rem; margin-bottom: 1rem; }
+    .skeleton-line  { height: 1rem; margin-bottom: 0.75rem; }
+    .skeleton-line.w80 { width: 80%; }
+    .skeleton-line.w60 { width: 60%; }
+
+    /* Error state */
+    .article-error {
+      text-align: center;
+      padding: 5rem 2rem;
+      color: var(--gray);
+    }
+    .article-error h2 { font-family: 'Cinzel', serif; color: var(--navy-deep); margin-bottom: 1rem; }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .article-layout { grid-template-columns: 1fr; }
+      .article-sidebar { display: none; }
+      .article-content { padding: 1.8rem; }
+      .article-share-bar { padding: 1.2rem 1.8rem; }
+    }
+    @media (max-width: 600px) {
+      .article-content { padding: 1.2rem; }
+      .article-title { font-size: 1.5rem; }
+      .article-text { font-size: 1.05rem; }
+    }
+
+    /* Nav card/link fix on white bg */
+    .nav-card-white .logo-name { color: var(--navy-deep) !important; }
+  </style>
+</head>
+<body>
+
+<!-- PAGE LOADER -->
+<div id="page-loader">
+  <div class="loader-emblem">
+    <div class="loader-ring"></div>
+    <div class="loader-ring"></div>
+  </div>
+  <div class="loader-text">AFM Warsaw</div>
+  <div class="loader-tagline">Warsaw Christian Centre</div>
+  <div class="loader-bars">
+    <div class="loader-bar"></div><div class="loader-bar"></div>
+    <div class="loader-bar"></div><div class="loader-bar"></div>
+    <div class="loader-bar"></div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header id="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo-wrap">
+      <img src="images/logowhite2.png" alt="AFM Warsaw Logo" class="logo-img">
+      <div class="logo-text-block">
+        <div class="logo-name">AFM Warsaw</div>
+        <div class="logo-sub">Warsaw Christian Centre</div>
+      </div>
+    </a>
+    <nav class="main-nav">
+      <a href="index.html"         class="nav-link">Home</a>
+      <a href="about.html"         class="nav-link">About</a>
+      <a href="ministries.html"    class="nav-link">Ministries</a>
+      <a href="gallery.html"       class="nav-link">Gallery</a>
+      <a href="blog.html"          class="nav-link active">Blog &amp; Sermons</a>
+      <a href="online.html"        class="nav-link">Online</a>
+      <a href="announcements.html" class="nav-link">News</a>
+      <a href="contact.html"       class="nav-link nav-cta">Contact</a>
+    </nav>
+    <button class="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="mobile-nav">
+    <a href="index.html"         class="nav-link">Home</a>
+    <a href="about.html"         class="nav-link">About</a>
+    <a href="ministries.html"    class="nav-link">Ministries</a>
+    <a href="gallery.html"       class="nav-link">Gallery</a>
+    <a href="blog.html"          class="nav-link active">Blog &amp; Sermons</a>
+    <a href="online.html"        class="nav-link">Online</a>
+    <a href="announcements.html" class="nav-link">News</a>
+    <a href="contact.html"       class="nav-link">Contact</a>
+  </nav>
+</header>
+
+<!-- ARTICLE HERO (populated by JS) -->
+<section class="article-hero" id="article-hero">
+  <div class="container" style="position:relative;">
+    <a href="blog.html" class="article-back-nav">
+      ← Back to Blog &amp; Sermons
+    </a>
+    <!-- Breadcrumb -->
+    <div class="breadcrumb reveal" id="article-breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="breadcrumb-sep">›</span>
+      <a href="blog.html">Blog</a>
+      <span class="breadcrumb-sep">›</span>
+      <span id="breadcrumb-title">Loading…</span>
+    </div>
+  </div>
+  <div id="article-featured-img-wrap" style="margin-top:2rem;position:relative;"></div>
+</section>
+
+<!-- META BAR -->
+<div class="article-meta-bar" id="article-meta-bar">
+  <div class="container">
+    <span class="article-tag" id="meta-topic">📖 Article</span>
+    <div class="article-date-meta">
+      <span>📅</span>
+      <span id="meta-date">Loading…</span>
+      <span class="dot"></span>
+      <span id="meta-author-name">AFM Warsaw</span>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div style="background: var(--off-white);">
+  <div class="container">
+    <div class="article-layout">
+
+      <!-- ARTICLE BODY -->
+      <div>
+        <div class="article-body" id="article-body">
+          <!-- Loading skeleton -->
+          <div class="article-content" id="article-skeleton">
+            <div class="skeleton skeleton-title" style="width:80%;height:2.5rem;"></div>
+            <div class="skeleton skeleton-title" style="width:55%;height:2rem;margin-bottom:1.5rem;"></div>
+            <div style="display:flex;align-items:center;gap:12px;padding:1rem 0;border-top:1px solid #e8e5de;border-bottom:1px solid #e8e5de;margin-bottom:2rem;">
+              <div class="skeleton" style="width:48px;height:48px;border-radius:50%;flex-shrink:0;"></div>
+              <div style="flex:1;"><div class="skeleton skeleton-line w60"></div><div class="skeleton skeleton-line w80" style="margin:0;"></div></div>
+            </div>
+            <div class="skeleton skeleton-line"></div>
+            <div class="skeleton skeleton-line w80"></div>
+            <div class="skeleton skeleton-line"></div>
+            <div class="skeleton skeleton-line w60"></div>
+            <div class="skeleton skeleton-line" style="margin-top:1.5rem;"></div>
+            <div class="skeleton skeleton-line w80"></div>
+            <div class="skeleton skeleton-line"></div>
+          </div>
+
+          <!-- Actual article content (hidden until loaded) -->
+          <div class="article-content hidden" id="article-actual">
+            <h1 class="article-title" id="article-title"></h1>
+            <div class="article-author-strip">
+              <div id="author-avatar-wrap"></div>
+              <div class="author-info">
+                <div class="author-name" id="article-author-name"></div>
+                <div class="author-label">Author</div>
+              </div>
+            </div>
+            <div class="article-text" id="article-text"></div>
+          </div>
+
+          <!-- Error state -->
+          <div class="article-content hidden" id="article-error">
+            <div class="article-error">
+              <div style="font-size:3rem;margin-bottom:1rem;">📄</div>
+              <h2>Article Not Found</h2>
+              <p>This article may have been moved or deleted.</p>
+              <a href="blog.html" class="btn btn-primary mt-3" style="display:inline-flex;">← Back to Blog</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Share bar -->
+        <div class="article-share-bar" id="share-bar" style="display:none;">
+          <span class="share-label">Share this article:</span>
+          <button class="share-btn facebook" onclick="shareArticle('facebook')">f Facebook</button>
+          <button class="share-btn whatsapp" onclick="shareArticle('whatsapp')">💬 WhatsApp</button>
+          <button class="share-btn copy-link" onclick="shareArticle('copy')">🔗 Copy Link</button>
+        </div>
+      </div>
+
+      <!-- SIDEBAR -->
+      <aside class="article-sidebar">
+
+        <!-- Verse of the day -->
+        <div class="verse-widget reveal">
+          <div class="verse-cross">✝</div>
+          <div class="verse-text" id="daily-verse">
+            "For God so loved the world that He gave His one and only Son, that whoever believes in Him shall not perish but have eternal life."
+          </div>
+          <div class="verse-ref" id="daily-verse-ref">John 3:16</div>
+        </div>
+
+        <!-- Related articles -->
+        <div class="sidebar-widget reveal">
+          <div class="widget-header">
+            <span style="color:var(--gold);">📝</span>
+            <div class="widget-title">More Articles</div>
+          </div>
+          <div class="widget-body" id="related-articles">
+            <div class="skeleton skeleton-line" style="margin-bottom:.75rem;"></div>
+            <div class="skeleton skeleton-line w80" style="margin-bottom:.75rem;"></div>
+            <div class="skeleton skeleton-line w60"></div>
+          </div>
+        </div>
+
+        <!-- Service times -->
+        <div class="sidebar-widget reveal">
+          <div class="widget-header">
+            <span style="color:var(--gold);">⏰</span>
+            <div class="widget-title">Join Us in Person</div>
+          </div>
+          <div class="widget-body">
+            <div style="display:flex;flex-direction:column;gap:0.8rem;">
+              <div style="display:flex;justify-content:space-between;padding:.6rem 0;border-bottom:1px solid #e8e5de;">
+                <div>
+                  <div style="font-size:.82rem;font-weight:700;color:var(--navy-deep);">Sunday Service</div>
+                  <div style="font-size:.72rem;color:var(--gray);">Main Worship</div>
+                </div>
+                <div style="font-family:'Cinzel',serif;font-weight:700;color:var(--gold);font-size:.9rem;">10:00 AM</div>
+              </div>
+              <div style="display:flex;justify-content:space-between;padding:.6rem 0;border-bottom:1px solid #e8e5de;">
+                <div>
+                  <div style="font-size:.82rem;font-weight:700;color:var(--navy-deep);">Wednesday</div>
+                  <div style="font-size:.72rem;color:var(--gray);">Bible Study</div>
+                </div>
+                <div style="font-family:'Cinzel',serif;font-weight:700;color:var(--gold);font-size:.9rem;">6:30 PM</div>
+              </div>
+              <div style="display:flex;justify-content:space-between;padding:.6rem 0;">
+                <div>
+                  <div style="font-size:.82rem;font-weight:700;color:var(--navy-deep);">Friday</div>
+                  <div style="font-size:.72rem;color:var(--gray);">Prayer Night</div>
+                </div>
+                <div style="font-family:'Cinzel',serif;font-weight:700;color:var(--gold);font-size:.9rem;">7:00 PM</div>
+              </div>
+            </div>
+            <a href="contact.html" class="btn btn-primary btn-sm mt-2" style="display:flex;justify-content:center;">Get Directions →</a>
+          </div>
+        </div>
+
+        <!-- Connect online -->
+        <div class="sidebar-widget reveal">
+          <div class="widget-header">
+            <span style="color:var(--gold);">🌐</span>
+            <div class="widget-title">Connect Online</div>
+          </div>
+          <div class="widget-body" style="display:flex;flex-direction:column;gap:.6rem;">
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener"
+              style="display:flex;align-items:center;gap:8px;padding:.6rem;border-radius:8px;background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045);color:#fff;font-size:.8rem;font-weight:600;transition:.2s;">
+              📷 Instagram Live
+            </a>
+            <a href="https://www.youtube.com/" target="_blank" rel="noopener"
+              style="display:flex;align-items:center;gap:8px;padding:.6rem;border-radius:8px;background:#ff0000;color:#fff;font-size:.8rem;font-weight:600;">
+              ▶ YouTube Channel
+            </a>
+            <a href="online.html"
+              style="display:flex;align-items:center;gap:8px;padding:.6rem;border-radius:8px;background:var(--navy-deep);color:var(--gold);font-size:.8rem;font-weight:600;border:1px solid rgba(201,162,39,0.3);">
+              ✝ Online Church
+            </a>
+          </div>
+        </div>
+
+      </aside>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT FORM -->
+<section class="section section-dark" id="contact">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-eyebrow">Reach Out</span>
+      <h2 class="section-title text-white">Get in <span>Touch</span></h2>
+      <div class="section-divider"><span class="section-divider-icon">✦</span></div>
+    </div>
+    <div style="max-width:760px;margin:0 auto;" class="reveal">
+      <div class="contact-form-section">
+        <form class="contact-form">
+          <div class="form-grid">
+            <div class="form-group">
+              <label class="form-label">Full Name *</label>
+              <input class="form-input" type="text" name="name" placeholder="Your full name" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Email *</label>
+              <input class="form-input" type="email" name="email" placeholder="your@email.com" required>
+            </div>
+            <div class="form-group full">
+              <label class="form-label">Subject</label>
+              <input class="form-input" type="text" name="subject" placeholder="What is this regarding?">
+            </div>
+            <div class="form-group full">
+              <label class="form-label">Message *</label>
+              <textarea class="form-textarea" name="message" placeholder="Write your message…" required></textarea>
+            </div>
+          </div>
+          <div class="form-msg"></div>
+          <div class="text-center mt-3">
+            <button type="submit" class="btn btn-primary">Send Message ✦</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo-name">AFM Warsaw Assembly</div>
+        <p style="color:rgba(255,255,255,0.35);font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.75rem;">Warsaw Christian Centre</p>
+        <p class="footer-desc">Advancing the gospel of Jesus Christ in Warsaw, Poland and beyond.</p>
+        <div class="social-links">
+          <a href="#" class="social-link">f</a>
+          <a href="#" class="social-link">📷</a>
+          <a href="#" class="social-link">▶</a>
+          <a href="#" class="social-link">💬</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="ministries.html">Ministries</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="blog.html">Blog &amp; Sermons</a></li>
+          <li><a href="online.html">Online Church</a></li>
+          <li><a href="announcements.html">Announcements</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Ministries</h4>
+        <ul>
+          <li><a href="ministry-men.html">Men's Ministry</a></li>
+          <li><a href="ministry-women.html">Women's Ministry</a></li>
+          <li><a href="ministry-youth.html">Youth Ministry</a></li>
+          <li><a href="ministry-sundayschool.html">Sunday School</a></li>
+          <li><a href="dept-worship.html">Praise &amp; Worship</a></li>
+          <li><a href="dept-prayer.html">Prayer Intercessors</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <div class="footer-contact-item"><span class="footer-contact-icon">📍</span><span>Warsaw, Poland</span></div>
+        <div class="footer-contact-item"><span class="footer-contact-icon">📧</span><span>info@afmwarsaw.org</span></div>
+        <div class="footer-contact-item"><span class="footer-contact-icon">⏰</span><span>Sunday 10:00 AM</span></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 AFM Warsaw Assembly — Warsaw Christian Centre. All rights reserved.</span>
+      <span>Advancing the Gospel | Warsaw, Poland</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+// ── ARTICLE LOADER ──────────────────────────────────────────────────
+
+const DAILY_VERSES = [
+  { text: '"For I know the plans I have for you," declares the Lord, "plans to prosper you and not to harm you, plans to give you hope and a future."', ref: 'Jeremiah 29:11' },
+  { text: '"I can do all this through him who gives me strength."', ref: 'Philippians 4:13' },
+  { text: '"The Lord is my shepherd, I lack nothing."', ref: 'Psalm 23:1' },
+  { text: '"Trust in the Lord with all your heart and lean not on your own understanding."', ref: 'Proverbs 3:5' },
+  { text: '"For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life."', ref: 'John 3:16' },
+  { text: '"Be strong and courageous. Do not be afraid; do not be discouraged, for the Lord your God will be with you wherever you go."', ref: 'Joshua 1:9' },
+  { text: '"And we know that in all things God works for the good of those who love him, who have been called according to his purpose."', ref: 'Romans 8:28' },
+];
+
+// Pick a consistent daily verse
+const todayVerse = DAILY_VERSES[new Date().getDay() % DAILY_VERSES.length];
+const verseEl    = document.getElementById('daily-verse');
+const verseRefEl = document.getElementById('daily-verse-ref');
+if (verseEl)    verseEl.textContent    = todayVerse.text;
+if (verseRefEl) verseRefEl.textContent = todayVerse.ref;
+
+// Get article ID from URL
+const params    = new URLSearchParams(window.location.search);
+const articleId = params.get('id');
+
+async function loadArticle() {
+  if (!articleId) {
+    showError();
+    return;
+  }
+
+  try {
+    const res  = await fetch(`php/api.php?action=blog_single&id=${encodeURIComponent(articleId)}`);
+    const json = await res.json();
+
+    if (!json.success || !json.data) {
+      showError();
+      return;
+    }
+
+    renderArticle(json.data);
+    loadRelatedArticles(articleId);
+
+  } catch (err) {
+    showError();
+  }
+}
+
+function renderArticle(a) {
+  // Page title
+  document.title = `${a.title} — AFM Warsaw Assembly`;
+  document.getElementById('page-title').textContent = `${a.title} — AFM Warsaw Assembly`;
+
+  // Breadcrumb
+  const bc = document.getElementById('breadcrumb-title');
+  if (bc) bc.textContent = a.title.length > 40 ? a.title.substring(0, 40) + '…' : a.title;
+
+  // Featured image
+  const imgWrap = document.getElementById('article-featured-img-wrap');
+  if (imgWrap) {
+    if (a.featured_image) {
+      imgWrap.innerHTML = `<img src="uploads/blog/${escHtml(a.featured_image)}" alt="${escHtml(a.title)}" class="article-featured-img" loading="eager">`;
+    } else {
+      imgWrap.innerHTML = `<div class="article-featured-placeholder">✝</div>`;
+    }
+  }
+
+  // Meta bar
+  const topicEl = document.getElementById('meta-topic');
+  if (topicEl) topicEl.textContent = `📖 ${a.topic || 'Article'}`;
+  const dateEl = document.getElementById('meta-date');
+  if (dateEl) dateEl.textContent = formatDate(a.published_at);
+  const metaAuthor = document.getElementById('meta-author-name');
+  if (metaAuthor) metaAuthor.textContent = a.author_name || 'AFM Warsaw';
+
+  // Article title
+  const titleEl = document.getElementById('article-title');
+  if (titleEl) titleEl.textContent = a.title;
+
+  // Author avatar
+  const avatarWrap = document.getElementById('author-avatar-wrap');
+  if (avatarWrap) {
+    if (a.author_photo) {
+      avatarWrap.innerHTML = `<img src="uploads/blog/${escHtml(a.author_photo)}" alt="${escHtml(a.author_name || '')}" class="author-avatar">`;
+    } else {
+      const initials = (a.author_name || 'A').split(' ').map(n => n[0]).join('').substring(0, 2).toUpperCase();
+      avatarWrap.innerHTML = `<div class="author-avatar-placeholder">${initials}</div>`;
+    }
+  }
+
+  // Author name
+  const authorEl = document.getElementById('article-author-name');
+  if (authorEl) authorEl.textContent = a.author_name || 'AFM Warsaw';
+
+  // Article content
+  const textEl = document.getElementById('article-text');
+  if (textEl) {
+    // Support both HTML content and plain text
+    if (a.content.includes('<') && a.content.includes('>')) {
+      textEl.innerHTML = a.content;
+    } else {
+      // Plain text — wrap paragraphs
+      textEl.innerHTML = a.content
+        .split(/\n\n+/)
+        .map(p => `<p>${p.replace(/\n/g, '<br>')}</p>`)
+        .join('');
+    }
+  }
+
+  // Show actual content, hide skeleton
+  document.getElementById('article-skeleton')?.classList.add('hidden');
+  document.getElementById('article-actual')?.classList.remove('hidden');
+  document.getElementById('share-bar').style.display = 'flex';
+}
+
+function showError() {
+  document.getElementById('article-skeleton')?.classList.add('hidden');
+  document.getElementById('article-error')?.classList.remove('hidden');
+  document.getElementById('breadcrumb-title').textContent = 'Not Found';
+}
+
+async function loadRelatedArticles(currentId) {
+  const container = document.getElementById('related-articles');
+  if (!container) return;
+
+  try {
+    const res  = await fetch('php/api.php?action=blog');
+    const json = await res.json();
+
+    if (!json.success || !json.data.length) {
+      container.innerHTML = '<p style="font-size:.82rem;color:var(--gray,#9a9485);text-align:center;padding:.5rem 0;">No other articles yet.</p>';
+      return;
+    }
+
+    // Filter out current article, show up to 4
+    const related = json.data.filter(a => String(a.id) !== String(currentId)).slice(0, 4);
+
+    if (!related.length) {
+      container.innerHTML = '<p style="font-size:.82rem;color:var(--gray,#9a9485);text-align:center;padding:.5rem 0;">No other articles yet.</p>';
+      return;
+    }
+
+    container.innerHTML = related.map(a => `
+      <div class="related-article" onclick="window.location.href='blog-single.html?id=${a.id}'">
+        ${a.featured_image
+          ? `<img src="uploads/blog/${escHtml(a.featured_image)}" class="related-thumb" alt="${escHtml(a.title)}" loading="lazy">`
+          : `<div class="related-thumb-placeholder">📝</div>`
+        }
+        <div>
+          <div class="related-title">${escHtml(a.title)}</div>
+          <div class="related-date">${formatDate(a.published_at)}</div>
+        </div>
+      </div>
+    `).join('');
+  } catch {
+    container.innerHTML = '<p style="font-size:.82rem;color:var(--gray,#9a9485);">Could not load articles.</p>';
+  }
+}
+
+// ── SHARE ──────────────────────────────────────────────────────────
+function shareArticle(platform) {
+  const url   = encodeURIComponent(window.location.href);
+  const title = encodeURIComponent(document.getElementById('article-title')?.textContent || 'AFM Warsaw Article');
+  const text  = encodeURIComponent('Read this inspiring article from AFM Warsaw Assembly: ');
+
+  const urls = {
+    facebook: `https://www.facebook.com/sharer/sharer.php?u=${url}`,
+    whatsapp: `https://wa.me/?text=${text}${url}`,
+    copy:     null,
+  };
+
+  if (platform === 'copy') {
+    navigator.clipboard?.writeText(window.location.href).then(() => {
+      const btn = document.querySelector('.share-btn.copy-link');
+      if (btn) {
+        const orig = btn.textContent;
+        btn.textContent = '✓ Copied!';
+        setTimeout(() => btn.textContent = orig, 2000);
+      }
+    });
+  } else if (urls[platform]) {
+    window.open(urls[platform], '_blank', 'noopener,width=600,height=450');
+  }
+}
+
+// ── HELPERS ────────────────────────────────────────────────────────
+function escHtml(str) {
+  if (!str) return '';
+  return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function formatDate(dateStr) {
+  if (!dateStr) return '';
+  return new Date(dateStr).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+}
+
+// ── INIT ───────────────────────────────────────────────────────────
+loadArticle();
+</script>
+</body>
+</html>
