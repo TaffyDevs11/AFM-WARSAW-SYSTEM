@@ -222,10 +222,10 @@ include 'layout.php';
   function checkMatch(){
     if(!confirmPw.value) { hint.textContent=''; return; }
     if(newPw.value===confirmPw.value){
-      hint.textContent='✓ Passwords match';
+      hint.innerHTML='<i class="fa-solid fa-circle-check icon-inline" aria-hidden="true"></i> Passwords match';
       hint.style.color='var(--green)';
     } else {
-      hint.textContent='✕ Passwords do not match';
+      hint.innerHTML='<i class="fa-solid fa-circle-xmark icon-inline" aria-hidden="true"></i> Passwords do not match';
       hint.style.color='#ff6b6b';
     }
   }
@@ -238,3 +238,4 @@ include 'layout.php';
 </script>
 
 <?php include 'layout_footer.php'; ?>
+

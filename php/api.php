@@ -18,6 +18,13 @@ if ($_SERVER['REQUEST_METHOD'] !== 'GET') {
 
 $action = trim($_GET['action'] ?? '');
 $db     = getDB();
+$sermonsHasThumbnail = false;
+
+try {
+    $sermonsHasThumbnail = (bool)$db->query("SHOW COLUMNS FROM sermons LIKE 'thumbnail_image'")->fetch();
+} catch (Throwable $e) {
+    $sermonsHasThumbnail = false;
+}
 
 function respond(array $data, int $code = 200): void {
     http_response_code($code);
@@ -100,14 +107,22 @@ try {
         // ── Sermons ─────────────────────────────────────────────────
         case 'sermons':
             $limit = min((int)($_GET['limit'] ?? 50), 100);
+            $sermonThumbSelect = $sermonsHasThumbnail ? ', thumbnail_image' : '';
             $stmt  = $db->prepare(
-                'SELECT id, title, description, preacher, video_url, sermon_date
+                'SELECT id, title, description, preacher, video_url, sermon_date' . $sermonThumbSelect . '
                  FROM sermons
                  ORDER BY sermon_date DESC
                  LIMIT ?'
             );
             $stmt->execute([$limit]);
             $rows = $stmt->fetchAll();
+
+            foreach ($rows as &$row) {
+                $thumb = $row['thumbnail_image'] ?? null;
+                $row['thumbnail_image_url'] = $thumb
+                    ? UPLOAD_URL . 'sermons/' . $thumb
+                    : null;
+            }
 
             // Group by month
             $grouped = [];
@@ -125,6 +140,10 @@ try {
             $stmt->execute([$id]);
             $row  = $stmt->fetch();
             if (!$row) respond(['success' => false, 'message' => 'Sermon not found'], 404);
+            $thumb = $row['thumbnail_image'] ?? null;
+            $row['thumbnail_image_url'] = !empty($thumb)
+                ? UPLOAD_URL . 'sermons/' . $thumb
+                : null;
             respond(['success' => true, 'data' => $row]);
             break;
 

@@ -86,8 +86,8 @@ include 'layout.php';
         <div class="form-field" style="margin-bottom:1rem;">
           <label class="field-label">Type <span class="req">*</span></label>
           <select class="f-select" name="type" id="ann-type" onchange="toggleAnnType()">
-            <option value="weekly"  <?= ($editAnn['type'] ?? '') !== 'special' ? 'selected' : '' ?>>📅 Weekly</option>
-            <option value="special" <?= ($editAnn['type'] ?? '') === 'special'  ? 'selected' : '' ?>>📢 Special Event</option>
+            <option value="weekly"  <?= ($editAnn['type'] ?? '') !== 'special' ? 'selected' : '' ?>>Weekly</option>
+            <option value="special" <?= ($editAnn['type'] ?? '') === 'special'  ? 'selected' : '' ?>>Special Event</option>
           </select>
         </div>
 

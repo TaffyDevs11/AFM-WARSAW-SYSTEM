@@ -107,6 +107,7 @@ $tables = [
     description TEXT,
     video_url   VARCHAR(500),
     video_file  VARCHAR(255),
+    thumbnail_image VARCHAR(255),
     preacher    VARCHAR(100),
     sermon_date DATE         NOT NULL,
     created_at  TIMESTAMP    DEFAULT CURRENT_TIMESTAMP,

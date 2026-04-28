@@ -61,13 +61,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 <body>
 <div class="page-loader" id="page-loader">
-  <div class="lr-wrap"><div class="l-ring"></div><div class="l-ring"></div><img class="l-logo" src="../images/logo.png" alt=""></div>
+  <div class="lr-wrap"><div class="l-ring"></div><div class="l-ring"></div></div>
 </div>
 
 <div class="login-wrap">
   <div class="login-card">
     <div class="login-header">
-      <img class="login-logo" src="../images/logo.png" alt="AFM Warsaw Assembly Logo">
+      <img class="login-logo" src="../images/logowhite2.png" alt="AFM Warsaw Assembly Logo">
       <div class="login-title">Admin Portal</div>
       <div class="login-sub">AFM Warsaw Assembly</div>
     </div>

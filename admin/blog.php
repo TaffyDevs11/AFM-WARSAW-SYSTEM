@@ -173,7 +173,7 @@ include 'layout.php';
         </div>
 
         <button type="submit" class="btn btn-primary w-full">
-          <?= $editArticle ? '💾 Update Article' : '🚀 Publish Article' ?>
+          <?= $editArticle ? 'Update Article' : 'Publish Article' ?>
         </button>
       </form>
     </div>

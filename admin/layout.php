@@ -39,8 +39,9 @@ $breadcrumbs = $breadcrumbs ?? [];
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><?= htmlspecialchars($pageTitle) ?> — AFM Warsaw Admin</title>
-  <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
+  <link rel="icon" type="image/svg+xml" href="../images/logowhite2.png">
   <link rel="stylesheet" href="admin.css">
+  <script src="admin.js"></script>
 </head>
 <body>
 <div class="admin-layout">
@@ -48,7 +49,7 @@ $breadcrumbs = $breadcrumbs ?? [];
   <!-- ═══ SIDEBAR ═══ -->
   <aside class="admin-sidebar">
     <div class="sidebar-brand">
-      <img src="../images/logo.png" alt="AFM Warsaw" class="sidebar-logo">
+      <img src="../images/logowhite2.png" alt="AFM Warsaw" class="sidebar-logo">
       <div class="sidebar-brand-text">
         <div class="brand-name">AFM Warsaw</div>
         <div class="brand-sub">Admin Panel</div>
@@ -57,22 +58,22 @@ $breadcrumbs = $breadcrumbs ?? [];
 
     <nav class="sidebar-nav">
       <div class="nav-section-label">Dashboard</div>
-      <?php navItem('overview.php', '📊', 'Overview', 'overview', $activePage) ?>
+      <?php navItem('overview.php', '', 'Overview', 'overview', $activePage) ?>
 
       <div class="nav-section-label">Content</div>
-      <?php navItem('gallery.php',       '🖼️',  'Gallery',       'gallery',       $activePage) ?>
-      <?php navItem('blog.php',          '📝',  'Blog Articles', 'blog',          $activePage) ?>
-      <?php navItem('sermons.php',       '🎙️',  'Sermons',       'sermons',       $activePage) ?>
-      <?php navItem('announcements.php', '📢',  'Announcements', 'announcements', $activePage) ?>
+      <?php navItem('gallery.php',       '',  'Gallery',       'gallery',       $activePage) ?>
+      <?php navItem('blog.php',          '',  'Blog Articles', 'blog',          $activePage) ?>
+      <?php navItem('sermons.php',       '',  'Sermons',       'sermons',       $activePage) ?>
+      <?php navItem('announcements.php', '',  'Announcements', 'announcements', $activePage) ?>
 
       <div class="nav-section-label">Responses</div>
-      <?php navItem('registrations.php', '📋', 'Registrations',  'registrations', $activePage, $navCounts) ?>
-      <?php navItem('contacts.php',      '💬', 'Contact Inbox',  'contacts',      $activePage, $navCounts) ?>
+      <?php navItem('registrations.php', '', 'Registrations',  'registrations', $activePage, $navCounts) ?>
+      <?php navItem('contacts.php',      '', 'Contact Inbox',  'contacts',      $activePage, $navCounts) ?>
 
       <div class="nav-section-label">System</div>
-      <?php navItem('settings.php', '⚙️', 'Settings', 'settings', $activePage) ?>
+      <?php navItem('settings.php', '', 'Settings', 'settings', $activePage) ?>
       <a href="../index.html" target="_blank" class="nav-item">
-        <span class="nav-icon">🌐</span><span>View Website</span>
+        <span class="nav-icon"></span><span>View Website</span>
       </a>
     </nav>
 

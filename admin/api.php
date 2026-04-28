@@ -11,6 +11,13 @@ header('Content-Type: application/json');
 
 $action = $_GET['action'] ?? $_POST['action'] ?? '';
 $db     = getDB();
+$sermonsHasThumbnail = false;
+
+try {
+    $sermonsHasThumbnail = (bool)$db->query("SHOW COLUMNS FROM sermons LIKE 'thumbnail_image'")->fetch();
+} catch (Throwable $e) {
+    $sermonsHasThumbnail = false;
+}
 
 function respond(array $data): void {
     echo json_encode($data);
@@ -59,7 +66,8 @@ switch ($action) {
 
     // ── Sermons ───────────────────────────────────────────────────────
     case 'sermon_list':
-        $stmt = $db->query("SELECT id, title, preacher, sermon_date, video_url FROM sermons ORDER BY sermon_date DESC");
+        $thumbSelect = $sermonsHasThumbnail ? ', thumbnail_image' : '';
+        $stmt = $db->query("SELECT id, title, preacher, sermon_date, video_url{$thumbSelect} FROM sermons ORDER BY sermon_date DESC");
         respond(['success' => true, 'data' => $stmt->fetchAll()]);
         break;
 

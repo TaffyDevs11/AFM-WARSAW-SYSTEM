@@ -16,6 +16,5 @@
 
 <div id="toast-container"></div>
 
-<script src="admin.js"></script>
 </body>
 </html>

@@ -30,32 +30,26 @@ include 'layout.php';
 <!-- STATS -->
 <div class="stats-grid">
   <div class="stat-card gold">
-    <div class="stat-icon">🖼️</div>
     <div class="stat-value" data-count="<?= $galleryCount ?>"><?= $galleryCount ?></div>
     <div class="stat-label">Gallery Images</div>
   </div>
   <div class="stat-card blue">
-    <div class="stat-icon">📝</div>
     <div class="stat-value" data-count="<?= $blogCount ?>"><?= $blogCount ?></div>
     <div class="stat-label">Blog Articles</div>
   </div>
   <div class="stat-card red">
-    <div class="stat-icon">🎙️</div>
     <div class="stat-value" data-count="<?= $sermonCount ?>"><?= $sermonCount ?></div>
     <div class="stat-label">Sermons</div>
   </div>
   <div class="stat-card gold">
-    <div class="stat-icon">📢</div>
     <div class="stat-value" data-count="<?= $annCount ?>"><?= $annCount ?></div>
     <div class="stat-label">Announcements</div>
   </div>
   <div class="stat-card green">
-    <div class="stat-icon">📋</div>
     <div class="stat-value" data-count="<?= $regCount ?>"><?= $regCount ?></div>
     <div class="stat-label">Registrations</div>
   </div>
   <div class="stat-card blue">
-    <div class="stat-icon">💬</div>
     <div class="stat-value" data-count="<?= $contactCount ?>"><?= $contactCount ?></div>
     <div class="stat-label">Contact Messages</div>
   </div>
@@ -64,16 +58,16 @@ include 'layout.php';
 <!-- QUICK ACTIONS -->
 <div class="panel mb-3">
   <div class="panel-header">
-    <div class="panel-title">⚡ Quick Actions</div>
+    <div class="panel-title">Quick Actions</div>
   </div>
   <div class="panel-body">
     <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
-      <a href="gallery.php#upload"       class="btn btn-primary">🖼️ Upload Image</a>
-      <a href="blog.php#new"             class="btn btn-secondary">📝 New Article</a>
-      <a href="sermons.php#new"          class="btn btn-secondary">🎙️ Add Sermon</a>
-      <a href="announcements.php#new"    class="btn btn-secondary">📢 Announcement</a>
-      <a href="registrations.php"        class="btn btn-ghost">📋 View Registrations</a>
-      <a href="contacts.php"             class="btn btn-ghost">💬 Contact Inbox</a>
+      <a href="gallery.php#upload"       class="btn btn-primary">Upload Image</a>
+      <a href="blog.php#new"             class="btn btn-secondary">New Article</a>
+      <a href="sermons.php#new"          class="btn btn-secondary">Add Sermon</a>
+      <a href="announcements.php#new"    class="btn btn-secondary">Announcement</a>
+      <a href="registrations.php"        class="btn btn-ghost">View Registrations</a>
+      <a href="contacts.php"             class="btn btn-ghost">Contact Inbox</a>
     </div>
   </div>
 </div>
@@ -83,7 +77,7 @@ include 'layout.php';
   <!-- RECENT REGISTRATIONS -->
   <div class="panel">
     <div class="panel-header">
-      <div class="panel-title">📋 Recent Registrations</div>
+      <div class="panel-title">Recent Registrations</div>
       <a href="registrations.php" class="btn btn-ghost btn-sm">View All</a>
     </div>
     <?php if ($recentRegs): ?>
@@ -107,7 +101,6 @@ include 'layout.php';
       </div>
     <?php else: ?>
       <div class="empty-state">
-        <div class="empty-icon">📋</div>
         <div class="empty-title">No Registrations Yet</div>
         <div class="empty-text">Ministry registration forms will appear here.</div>
       </div>
@@ -117,7 +110,7 @@ include 'layout.php';
   <!-- MINISTRY BREAKDOWN -->
   <div class="panel">
     <div class="panel-header">
-      <div class="panel-title">📊 Registration Breakdown</div>
+      <div class="panel-title">Registration Breakdown</div>
     </div>
     <div class="panel-body">
       <?php if ($ministryBreakdown): ?>
@@ -145,7 +138,7 @@ include 'layout.php';
   <!-- RECENT BLOG ARTICLES -->
   <div class="panel">
     <div class="panel-header">
-      <div class="panel-title">📝 Recent Articles</div>
+      <div class="panel-title">Recent Articles</div>
       <a href="blog.php" class="btn btn-ghost btn-sm">Manage</a>
     </div>
     <?php if ($recentBlog): ?>
@@ -177,7 +170,7 @@ include 'layout.php';
   <!-- CONTACT INBOX PREVIEW -->
   <div class="panel">
     <div class="panel-header">
-      <div class="panel-title">💬 Contact Inbox</div>
+      <div class="panel-title">Contact Inbox</div>
       <a href="contacts.php" class="btn btn-ghost btn-sm">View All</a>
     </div>
     <?php if ($recentContacts): ?>
